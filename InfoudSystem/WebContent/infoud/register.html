@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>register</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    .footer{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color:yellow;
+  text-align: center;
+  display: block;
+}
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">INFOUD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="login.html">Login <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="register.html">Register<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Logout</a>
+        </li>
+    </ul>
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+</form></div></nav>
+<div class="container mt-5">
+<div class="row">
+    <div class="col-sm">
+        <h1>Register Here</h1>
+    </div>
+</div>    <!-- alert will be here -->
+<div class="row">
+    <div class="col-sm">
+         
+ <form name="AddForm" onsubmit="return validate()" method='post'>
+    <table class='table table-hover'>
+ 
+        <tr>
+            <td>First Name</td>
+            <td><input type='text' name='fname' class='form-control' required></td>
+        </tr>
+        
+        <tr>
+            <td>Last Name</td>
+            <td><input type='text' name='lname' class='form-control' required></td>
+        </tr>
+ 
+        <tr>
+            <td>Contact Number</td>
+            <td><input type='text' name='contact_number' onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"
+                 class='form-control' required></td>
+        </tr>
+ 
+        <tr>
+            <td>Address</td>
+            <td><textarea name='address' class='form-control'></textarea></td>
+        </tr>
+ 
+        <tr>
+            <td>Gender</td>
+            <td>
+                <select name='list_id' class='form-control'>
+                    <option value='1'>Female</option>
+                    <option value='2'>Male</option>
+                
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Email</td>
+            <td><input type='text' name='email' class='form-control' required></td>
+        </tr>
+ 
+ <tr>
+            <td>Set Username</td>
+            <td><input type='text' name='uname' class='form-control' required></td>
+        </tr>
+ 
+ <tr>
+            <td>Set Password</td>
+            <td><input type='text' name='psw' class='form-control' required></td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-plus"></span> Register
+                </button>
+            </td>
+        </tr>
+ 
+    </table>
+</form>
+             
+    </div>
+</div></div><br><br><br>
+<footer class="footer">
+        © 2018 Copyright:
+        INFOUD.co.in
+        <p>On Twitter</p>
+        <p>On Facebook</p>
+        <p>On Instagram</p>
+</footer>
+<script type="text/javascript">
+	function validate() {
+		var fname = document.forms["AddForm"]["fname"];
+        var lname = document.forms["AddForm"]["lname"];
+		var address = document.forms["AddForm"]["address"];
+		var uname = document.forms["AddForm"]["uname"];
+		var psw = document.forms["AddForm"]["psw"];
+		var mob = document.forms["AddForm"]["contact_number"];
+		if (fname.value == "") {
+			window.alert("Please enter Name.");
+			fname.focus();
+			return false;
+		}
+        if (lname.value == "") {
+			window.alert("Please enter Name.");
+			lname.focus();
+			return false;
+		}
+		if (address.value == "") {
+			window.alert("Please enter Address.");
+			address.focus();
+			return false;
+		}
+		if (mob.value == "") {
+			window.alert("Please enter Mobile no.");
+			mob.focus();
+			return false;
+		}
+
+		if (mob.value.length != 10) {
+			window.alert("Phone number must be 10 digits.");
+			mob.focus();
+			return false;
+		}
+		if (uname.value == "") {
+			window.alert("Please set username.");
+			uname.focus();
+			return false;
+		}
+		if (psw.value == "") {
+			window.alert("Please set password");
+			psw.focus();
+			return false;
+		}
+
+		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+				.test(AddForm.email.value)) {
+			return true;
+		}
+		alert("You have entered an invalid email address!")
+		return false;
+
+		window.alert("Registration Successfull.");
+
+	}
+</script>
+
+</body>
+</html>
