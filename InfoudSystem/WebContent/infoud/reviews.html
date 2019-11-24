@@ -38,6 +38,38 @@ p.b{
       background-attachment: fixed;
       background-size: 100% 100%;
   }
+      .slideshow-container {
+  position: relative;
+    
+  }
+  
+  .mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
   
       </style>  
     </head>
@@ -79,27 +111,55 @@ p.b{
            
             
          <div class="col-sm, sectbg">
+         <div class="slideshow-container">
             <section>
+                <div class="mySlides">
                 <h5>@alex.jass123</h5>
                 <p class="c">This product has been beneficial for building trust with our customers. Am so glad we employed this on our website.</b>
-                </p>
+                </p></div>
+                <div class="mySlides">
+                        <h5>@john21Kings54</h5>
+                        <p class="c">This product has been beneficial for building trust with our customers. Am so glad we employed this on our website.</b>
+                        </p></div>
+                <div class="mySlides">
+                        <h5>@jazz48.baz</h5>
+                        <p class="c">This product has been beneficial for building trust with our customers. Am so glad we employed this on our website.</b>
+                        </p></div>        
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+        
               </section>  
                   
-        </div></div></div>
-
+        </div></div></div></div>
+       
         <div class="container mt-5">
-                <p class="b">Website Development Reviews</p>
+                <p class="b"> Mobile Application Development Reviews</p>
         <div class="row">
+
         <div class="col-sm, sect2bg">
-            <section>
-                <h5>@john21Kings54</h5>
-                <p class="c">The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961.</p>
-              </section>  
-                  
-        </div> </div></div>
+                <div class="slideshow-container1">
+                        <section>
+                            <div class="mySlides">
+                            <h5>@alex.jass123</h5>
+                            <p class="c">This product has been beneficial for building trust with our customers. Am so glad we employed this on our website.</b>
+                            </p></div>
+                            <div class="mySlides">
+                                    <h5>@john21Kings54</h5>
+                                    <p class="c">This product has been beneficial for building trust with our customers. Am so glad we employed this on our website.</b>
+                                    </p></div>
+                            <div class="mySlides">
+                                    <h5>@jazz48.baz</h5>
+                                    <p class="c">This product has been beneficial for building trust with our customers. Am so glad we employed this on our website.</b>
+                                    </p></div>        
+                            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                            <a class="next" onclick="plusSlides(1)">❯</a>
+                    
+                          </section>  
+                              
+                    </div></div></div></div>
 
         <div class="container mt-5">
-                <p class="b">Website Development Reviews</p>
+                <p class="b">Software Solution Consultant Reviews</p>
         <div class="row">
         <div class="col-sm, sectbg">
                 <section>
@@ -108,10 +168,15 @@ p.b{
                     </p>
                   </section>  
                       
-            </div></div></div>
+            </div></div></div></div>
 
             <div class="container mt-5">
-                    <p class="b">Website Development Reviews</p>
+                    <p class="b"><div class="mySlides">
+                                <p class="b">Software Solution Consultant Reviews</p>
+                             
+                               <h5>@john2Kings54</h5>
+                               <p class="c">This product has been beneficial for building trust with our customers. Am so glad we employed this on our website.</b>
+                               </p> <p class="date">11:34pm, Aug2019</p></div>   </p>
             <div class="row">
         <div class="col-sm, sect2bg">
             <section>
@@ -122,7 +187,7 @@ p.b{
          </div></div></div>
 
          <div class="container mt-5">
-                <p class="b">Website Development Reviews</p>
+                <p class="b">IOT Based product Reviews</p>
         <div class="row">
         <div class="col-sm, sectbg">
                 <section>
@@ -164,6 +229,34 @@ p.b{
             <p>On Facebook</p>
             <p>On Instagram</p>
     </footer>
+    <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>

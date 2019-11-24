@@ -1,0 +1,95 @@
+<html>
+
+<head><title>calculator</title>
+</head>
+<script>
+
+        function plus(a,b) {
+            return (+a + +b);
+        }
+
+        function minus(a,b) {
+            return (a - b);
+        }
+
+        function multiply(a,b) {
+            return (a * b);
+        }
+
+        function divide(a,b) {
+            return (a / b);
+        }
+
+        function calc() {
+
+            var x = document.getElementById("ip1").value;
+            var y = document.getElementById("operation").value;
+            var z = document.getElementById("ip2").value;
+            var w;
+            switch (y) {
+                case '0':
+                    w = plus(x, z);
+                    break;
+
+                case '1':
+                    w = minus(x, z);
+                    break;
+
+                case '2':
+                    w = multiply(x, z);
+                    break;
+
+                case '3':
+                    w = divide(x, z);
+                    break;
+
+               
+            }
+            document.getElementById("result").value = w;
+
+        }
+
+</script>
+<style>
+        .box {
+          background-color: lightgrey;
+          width: 1330px;
+          border: 10px solid green;
+          padding: 50px;
+          margin: 20px;
+          text-align: center;
+        }
+
+        .button {
+  background-color: #008CBA;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+        </style>
+<body>
+    <form class="box">   
+         <h1>MY CALCULATOR</h1>
+         <img src="../images/calci.png" alt="calci" style="width: 800px; height: 300px;"><br><br>
+         <label for="no1">Enter 1st Number:</label>
+         <input type="text"  id="ip1" value=""><br><br>
+         <label for="opn">Select Operation: </label>
+        <select id="operation">
+            <option value="0">ADD</option>
+            <option value="1">SUBTRACT</option>
+            <option value="2">MULTIPLY</option>
+            <option value="3">DIVIDE</option>
+        </select><br><br>
+        <label for="no2">Enter 2nd Number</label>
+        <input type="text" id="ip2" value=""><br><br>
+        <input type="button" class="button" onClick="calc();" value="calculate"><br><br>
+        <label for="result">Result:</label>
+        <input type="text" id="result" value="">
+    </form>
+
+</body>
+</html>

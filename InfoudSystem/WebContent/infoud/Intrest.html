@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>intrest</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+
+            function simpleInt(noOfYears,principleAmount,rateOfInterest){
+                return (noOfYears*principleAmount*rateOfInterest)/100;
+/*                 console.log("Simple Intrest: " + intrest);
+ */            }
+            
+            function compoundInt(noOfYears,principleAmount,rateOfInterest){
+                return principleAmount*(Math.pow((1+(rateOfInterest/100)),noOfYears));
+/*                 console.log("Compound Intrest: " + intrest);
+ */            }
+            function intrest(){
+                var years= document.getElementById("noOfYears").value;
+                var principle = document.getElementById("principleAmount").value;
+                var rate = document.getElementById("rateOfIntrest").value;
+                var operation = document.getElementById("operation").value;
+                var intrest;
+
+                switch(operation){
+                    case '0':
+                        intrest=simpleInt(years, principle,rate);
+                        break;
+                     
+                    case '1':
+                        intrest = compoundInt(years, principle,rate);
+                        break;    
+                }
+
+                document.getElementById("result").value=intrest;
+
+            }
+            </script>
+            <style>
+               
+                    .box {
+                      width: 1330px;
+                      border: 10px solid black;
+                      padding: 50px;
+                      margin: 20px;
+                      text-align: center;
+                    }
+            
+                    .button {
+              background-color: #008CBA;
+              border: none;
+              color: black;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+            }
+                    </style>
+</head>
+<body>
+    <form class="box">
+        <img src="../images/intrest.png" alt="intrest" style="width: 100%; height: 300px;">
+       <h1> Intrest Calculator:</h1>
+       <label for="years">No of Years:</label>
+       <input type="text" id="noOfYears" value=""><br><br>
+       <label for="amount">Principle Amount:</label>
+       <input type="text" id="principleAmount" value=""><br><br>
+       <label for="intrate">Rate of Intrest:</label>
+       <input type="text" id="rateOfIntrest" value=""><br><br>
+       <label for="opn">Select Type Of Intrest: </label>
+       <select id="operation">
+           <option value="0">Simple Intrest</option>
+           <option value="1">Compound Intrest</option>
+           
+       </select><br><br>
+       <input type="button" class="button" onClick="intrest();" value="calculate"><br><br>
+       <label for="result">Intrest:</label>
+       <input type="text" id="result" value="">
+    </form>
+</body>
+</html>

@@ -11,8 +11,9 @@
     <style type="text/css">
     .heading{
 	text-align: center;
-	  color: black;
+	  
 }
+
 .footer{
             left: 0;
             bottom: 0;
@@ -23,6 +24,81 @@
             display: block;
           }
           
+.backgorund{
+    background-color: black;
+}   
+.about{
+    color: yellow;
+    font-style: oblique;
+} 
+* {
+          box-sizing: border-box;
+        }
+        
+        body {
+          background-color: #f1f1f1;
+          padding: 20px;
+          font-family: Arial;
+        }
+        
+        /* Center website */
+        .main {
+          max-width: 1000px;
+          margin: auto;
+        }
+        
+        h1 {
+          font-size: 50px;
+          word-break: break-all;
+        }
+        
+        .row {
+          margin: 8px -16px;
+        }
+        
+        /* Add padding BETWEEN each column */
+        .row,
+        .row > .column {
+          padding: 8px;
+        }
+        
+        /* Create four equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 25%;
+        }
+        
+        /* Clear floats after rows */ 
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Content */
+        .content {
+          background-color: white;
+          padding: 10px;
+        }
+        
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 900px) {
+          .column {
+            width: 50%;
+          }
+        }
+        
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .column {
+            width: 100%;
+          }
+        }     
+        #map { 
+                  width: 100%; 
+                  height: 400px; 
+                  background-color: grey; 
+                } 
     </style>    
     
 </head>
@@ -45,25 +121,16 @@
         <li class="nav-item">
             <a class="nav-link" href="register.html">Register<span class="sr-only"></span></a>
         </li>
+       
+
         <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-        </li>
+                <a class="nav-link" href="feedback.html">Feedback<span class="sr-only"></span></a>
+            </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.html">Logout</a>
+            <a class="nav-link" href="index.html">Logout<span class="sr-only"></span></a>
         </li>
         
-<!-- <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-    </div>
-</li>   -->  </ul>
+ </ul>
 <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
@@ -73,14 +140,16 @@
     <div class="col-sm">
         <h1></h1>
     </div>
-</div>    <!-- alert will be here -->
+</div>    
 <div class="row">
     <div class="col-sm">
        <div class="heading">
+           
          <h1>
 			<b>ABOUT</b>
-		</h1>
-		<h2>You imagine we develop.</h2>
+        </h1>
+        <div>
+		<h2 class="about backgorund">You imagine we develop.</h2></div>
 		<p>First and foremost, we are professional and we understand
 			client requirements and their need to satisfy expectations. We
 			exactly know what we all demand as client and we are adhere to our
@@ -107,7 +176,55 @@
 			is to provide completely customized application for business
 			perspective. Innovation is a building pillar of INFOUD.
 		<h1>SERVICES</h1>
-		<h2>We provide the best IT solution around the world.</h2>
+        <h2>We provide the best IT solution around the world.</h2>
+        <h2 class="about backgorund ">
+                We Are Here
+            </h2>
+            <div id="map"></div> 
+<br>
+        <h2 class="about backgorund">Meet Our Ultra Developers & Their Thoughts</h2>
+        <div class="row">
+                <div class="column">
+                  <div class="content">
+                    <img src="../images/sanket.png" alt="sanket" style="width:100%;height:350px;">
+                    <h3>Sanket Upadhyay</h3>
+                    <p>Founder Of INFOUD.<br> A programming language is for thinking about programs, 
+                        not for expressing programs you've already thought of. It should be a pencil, not a pen.<br>
+                    ---- Sanket</p>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="content">
+                  <img src="../images/himani.png" alt="himani" style="width:100%;height:350px;">
+                    <h3>Himani Upadhyay</h3>
+                    <p>Senior Developer<br>It´s better to wait for a productive programmer to become available than 
+                        it is to wait for the first available programmer to become productive.<br>
+                    ----Himani</p>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="content">
+                  <img src="../images/deepali.png" alt="deepali" style="width:100%;height:350px;">
+                    <h3>Deepali Upadhyay</h3>
+                    <p>Senior Developer<br>Bad programmers worry about the code. 
+                        Good programmers worry about data structures and their relationships.First, solve the problem.Then write the code. <br>
+                    ----Deepali</p>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="content">
+                  <img src="../images/nayan.png" alt="nayan" style="width:100%;height:350px;">
+                    <h3>Nayan Gohil</h3>
+                    <p>Architect<br> Most good programmers do programming not because they expect to get paid or get adulation by the public,
+                         but because it is fun to program. <br>
+                    ----Nayan</p>
+                  </div>
+                </div>
+             
+              </div>
+              
+        
+              
 </div>
 	</div>
          
@@ -121,5 +238,22 @@
         <p>On Facebook</p>
         <p>On Instagram</p>
 </footer>
+<script> 
+        function initMap() { 
+          var test= {lat: 19.228825, lng:  72.854118}; 
+          var map = new google.maps.Map(document.getElementById('map'), { 
+            zoom: 4, 
+            center: test 
+          }); 
+          var marker = new google.maps.Marker({ 
+            position: test, 
+            map: map 
+          }); 
+        } 
+      </script> 
+      <script async defer 
+      src= 
+  "https://maps.googleapis.com/maps/api/js?key=AIzaSyACgAYD0JimRhi41ftghfqXMHJPsiMrU10&callback=initMap"> 
+      </script> 
 </body>
 </html>

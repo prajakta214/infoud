@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>patterns</title>
+
+    </head>
+<script type="text/javascript">
+function pattern1(){
+    var i,j;
+    document.write('Pattern 1::');
+    document.write('<br />');
+
+ for(i=1; i <= 5; i++)
+ {
+  for(j=1; j<=i; j++)
+ {
+   
+   document.write('*');
+  }
+   document.write('<br />');
+  }
+  document.write('<br />');
+
+  document.write('Pattern 2::');
+  document.write('<br />');
+
+  for(i=5; i>=0;i--){
+
+      for(j=0; j<i; j++){
+          document.write('*');
+      }
+      document.write('<br />');
+  }
+  document.write('<br />');
+  document.write('Pattern 3::');
+  document.write('<br />');
+
+  for(i=0; i<5;i++){
+      for(j=(5-i); j>1; j--){
+          document.write('-');
+      }
+      for(j=0; j<=i; j++){
+          document.write('*');
+      }
+      document.write('<br />');
+  }
+  document.write('<br />');
+  document.write('Pattern 4::');
+  document.write('<br />');
+
+  for(i=5; i > 0; i--){
+      for(j = (5-i); j>0; j--){
+          document.write('-');
+      }
+      for(j = 0; j < i; j++ ){
+          document.write('*');
+      }
+      document.write('<br />');
+  }
+ 
+}
+ 
+
+  
+
+
+
+/* for(int i=0;i<r;i++) {
+			for(int j=(r-i);j>1;j--) {
+				System.out.print(" ");
+			}
+			for(int j=0;j<=i;j++) {
+				System.out.print("*");
+			}
+			System.out.println("");
+			} */
+</script>
+<body>
+<h1>Display Pattern </h1>
+<input type="button" onclick="pattern1();" value="Display">
+
+
+</body>
+
+</html>
